@@ -164,11 +164,7 @@ img {
   line-height: 26px;
   border-radius: 12px;
   background-color: var(--semi-white);
-  transition: box-shadow 0.3s linear;
-}
-
-.presentation-cards ._card:hover .body {
-  box-shadow: 0px 24px 56px rgba(7, 0, 59, 0.12);
+  box-shadow: 0px 2px 6px rgba(7, 0, 59, 0.12);
 }
 
 .presentation-cards ._card .body small {
