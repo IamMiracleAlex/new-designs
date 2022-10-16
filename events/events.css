@@ -61,6 +61,10 @@ img {
   padding: 10px 22px;
 }
 
+.btn:hover {
+  color: var(--white);
+}
+
 .underline {
   width: 80px;
   height: 4px;
@@ -81,6 +85,13 @@ img {
 .events-sub-nav {
   height: 92px;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.07);
+
+  /* style declarations depends on the nav bar */
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: inherit;
 }
 
 [data-events] {
@@ -186,15 +197,11 @@ img {
 }
 
 .presentation-cards ._card .body {
-  padding: 10px;
+  padding: 15px 10px;
   line-height: 26px;
   border-radius: 12px;
   background-color: var(--semi-white);
-  transition: box-shadow 0.3s linear;
-}
-
-.presentation-cards ._card:hover .body {
-  box-shadow: 0px 24px 56px rgba(7, 0, 59, 0.12);
+  box-shadow: 0px 2px 6px rgba(7, 0, 59, 0.12);
 }
 
 .presentation-cards ._card .body small {
@@ -220,16 +227,51 @@ img {
   border-radius: 5px;
   border: 1px solid var(--light-gray);
   padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  position: relative;
+}
+
+.events-table .box:hover {
+  border: 1px transparent;
+}
+
+.events-table .box * {
+  transition: all 0.2s linear;
+}
+
+.events-table .box:hover * {
+  color: var(--white) !important;
+}
+
+.events-table .box:hover .underline {
+  background-color: var(--white) !important;
+}
+
+.events-table .box:hover img {
+  opacity: 1;
+}
+
+.events-table .box img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
 }
 
 .events-table .date,
 .events-table .tag,
 .events-table .description {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .events-table .date {
